@@ -1,0 +1,49 @@
+//题目链接：https://www.patest.cn/contests/pat-a-practise/1001
+#include<iostream>
+#include<vector>
+#include <sstream>
+#include <string>
+using namespace std;
+
+int main(){
+  int a,b,sum;
+  cin>>a>>b;
+  sum=a+b;
+  bool minus=false;
+  if(sum<0){
+    minus=true;
+    sum=-1*sum;
+  }
+  vector<int>vec;
+  
+  int bit;
+  if (sum==0)
+    vec.push_back(0);
+  else{
+    while(sum){
+      bit=sum%10;  //注意负数的模的结果还是负数，这是bool exist存在的意义
+      vec.push_back(bit);
+      sum/=10;
+      }
+  }
+  
+  int total_bit=vec.size();
+  stringstream ss;
+  int count=0;
+  if (minus)
+    ss<<"-";
+  while(vec.size()!=0){
+    if(total_bit==6 && count==3)
+      ss<<",";
+    else if((6>total_bit && total_bit>3) ||(total_bit>6))
+      if((total_bit-count)%3==0)
+        ss<<",";
+    int temp=vec.back();
+    vec.pop_back();
+    ss<<temp;
+    count++;
+  }
+  cout<<ss.str()<<endl;
+  
+  return 0;
+}
