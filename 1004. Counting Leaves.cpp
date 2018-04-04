@@ -1,5 +1,4 @@
 //题目链接在这儿：https://www.patest.cn/contests/pat-a-practise/1004
-//30分满分，拿了27分，有个测试点不对，咋回事呢？？
 
 #include <iostream>
 
@@ -45,7 +44,7 @@ int main()
     6 2 10 11
     7 1 12
     */
-    int max_depth=-1;
+    int max_depth=0;
     while(layer[N-1]==-1)
     {
         for(int i=0;i<N;i++)
