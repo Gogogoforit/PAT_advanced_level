@@ -1,7 +1,4 @@
 //题目链接在这儿：https://www.patest.cn/contests/pat-a-practise/1002
-//25分拿了15分，有几个测试点有问题
-
-
 #include <iostream>
 #include <stdio.h>      /* printf */
 #include <math.h>
@@ -68,26 +65,16 @@ int main()
     int count_sum=0;
     for(int i=0;i<1001;i++)
     {
-        if(fabs(b[i])>1e-2)
+        if(fabs(b[i])>1e-4)
             count_sum+=1;
-        else
-            b[i]=0;
     }
 
 
-    cout<<count_sum<<" ";
-    int step=0;
+    cout<<count_sum;
     for(int i=1000;i>=0;i--)
     {
-        if(b[i]!=0)
-        {
-            cout<<i<<" ";
-            cout.precision(2);
-            cout<<b[i];
-            step++;
-            if(step!=count_sum)
-                cout<<" ";
-        }
+        if(fabs(b[i])>1e-4)
+            printf(" %d %.1f", i, b[i]);
     }
 
     return 0;
