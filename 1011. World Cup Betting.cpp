@@ -1,3 +1,5 @@
+//题目链接：https://www.patest.cn/contests/pat-a-practise/1011
+
 #include <iostream>
 #include <stdio.h>
 using namespace std;
